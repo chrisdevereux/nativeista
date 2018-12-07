@@ -12,6 +12,7 @@
     "@storybook/addon-links": "^4.0.8",
     "@storybook/addons": "^4.0.8",
     "@storybook/react": "^4.0.8",
+    "@types/lodash": "^4.14.118",
     "@types/react": "^16.7.7",
     "@types/react-native": "^0.57.13",
     "@types/storybook__addon-actions": "^3.4.1",
@@ -27,6 +28,7 @@
     "react-art": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-native-web": "^0.9.8",
+    "react-svg-loader": "^2.1.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.0",
     "tslint": "^5.11.0",
@@ -34,7 +36,16 @@
     "tslint-react": "^3.6.0",
     "typescript": "^3.1.6"
   },
-  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-native-svg": "^8.0.8"
+  },
+  "dependencies": {
+    "@emotion/native": "^9.2.9",
+    "lodash": "^4.17.11",
+    "react-native-size-matters": "^0.1.4",
+    "recompose": "^0.30.0"
+  },
   "scripts": {
     "storybook": "start-storybook -p 6001",
     "build-storybook": "build-storybook"
@@ -46,7 +57,7 @@
     }
   },
   "lint-staged": {
-    "*.(js|ts|tsx|jsx)": [
+    "*.(ts|tsx)": [
       "prettier --write",
       "tslint --fix",
       "git add"
