@@ -10,14 +10,22 @@ import {
 } from '../util'
 import { getSize } from './sizing'
 
-interface GridItemProps extends ViewProps {
+export interface GridItemProps extends ViewProps {
   children?: React.ReactNode
   spacing?: number
   sizing?: number | string | 'equal'
   flex?: boolean
+  align?: GridAlignment
+  justify?: GridJustify
 }
 
-const gridParent = ({ flex }: GridItemProps): Style => ({})
+type GridAlignment = Style['alignItems']
+type GridJustify = Style['justifyContent']
+
+const gridParent = ({ align, justify }: GridItemProps): Style => ({
+  alignItems: align,
+  justifyContent: justify,
+})
 
 const gridChild = ({ flex }: GridItemProps): Style => ({
   flexShrink: 0,
