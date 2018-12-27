@@ -1,3 +1,4 @@
+import { any } from 'prop-types'
 import * as React from 'react'
 import { View, ViewProps } from 'react-native'
 import { Style } from './styled'
@@ -9,7 +10,7 @@ import { Style } from './styled'
 export function createChildStyler<Props>(
   opts: (props: Props, ctx: { isFirst: boolean; count: number }) => Style,
 ): (props: Props) => React.ReactElement<{}> {
-  return ({ children, ...props }: any) => {
+  return React.forwardRef(({ children, ...props }: any, ref: any) => {
     const count = React.Children.toArray(children).filter(React.isValidElement)
       .length
 
@@ -18,7 +19,7 @@ export function createChildStyler<Props>(
     )
 
     return (
-      <View {...props}>
+      <View ref={ref} {...props}>
         {React.Children.map(children, (child, i) => {
           if (!React.isValidElement<ViewProps>(child)) {
             return child
@@ -34,7 +35,7 @@ export function createChildStyler<Props>(
         })}
       </View>
     )
-  }
+  }) as any
 }
 
 /**

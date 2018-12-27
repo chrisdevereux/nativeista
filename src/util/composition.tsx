@@ -10,3 +10,11 @@ export function enclose<Props>(
       <Inner {...props} />,
     )
 }
+
+export function pure<Props>(Component: React.ComponentType<Props>) {
+  return class Pure extends React.PureComponent {
+    render() {
+      return <Component {...this.props} />
+    }
+  }
+}
