@@ -6,7 +6,8 @@
     "no-empty-interface": false,
     "interface-name": false,
     "object-literal-sort-keys": false,
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "no-namespace": false
   },
   "linterOptions": {
     "exclude": [
