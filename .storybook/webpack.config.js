@@ -2,9 +2,16 @@ module.exports = (baseConfig, env, config) => {
   config.module.rules = [
     {
       test: /\.(ts|tsx)$/,
-      loaders: [require.resolve('babel-loader'), require.resolve('ts-loader')],
+      loaders: [
+        require.resolve('babel-loader'),
+        {
+          loader: require.resolve('ts-loader'),
+          options: {
+            transpileOnly: true
+          }
+        }
+      ],
     },
-
     {
       test: /\.svg$/,
       use: [
