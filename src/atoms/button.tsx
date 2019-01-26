@@ -88,7 +88,7 @@ const variants = {
     opacity: active$.interpolate({
       inputRange: [0, 1],
       outputRange: [1, 0.8],
-    }),
+    }) as any,
   })),
 }
 

@@ -5,6 +5,7 @@ import { getSize } from './sizing'
 interface BoxProps extends ViewStyle {
   padding?: number
   style?: StyleProp<ViewStyle>
+  children?: React.ReactNode
 }
 
 export const Box = styled(View)(

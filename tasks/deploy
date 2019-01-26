@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eo pipefail
+PATH=$PATH:$(pwd)/node_modules/.bin
+
+echo "BUILDING..."
+tsc --outDir .
+
+echo "DEPLOYING"
+semantic-release

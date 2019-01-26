@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import React = require('react')
 import { View } from 'react-native'
-import { Cell, Columns, Rows } from './grids'
+import { Cell, Columns, Rows } from '../grids'
 
 storiesOf('layout > columns', module)
   .add('fixed equal width', () => (

@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/react'
 import { startCase } from 'lodash'
 import * as React from 'react'
 import { Text } from 'react-native'
-import { Columns, Rows } from '../layout'
-import { Button, ButtonProps } from './button'
+import { Columns, Rows } from '../../layout'
+import { Button, ButtonProps } from '../button'
 
 const exampleButtons = (props: Partial<ButtonProps> = {}) => (
   <Rows spacing={2}>

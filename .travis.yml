@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - 10
+
+addons:
+  chrome: stable
+
+cache:
+  directories:
+    - ~/.npm
+    - node_modules
+
+notifications:
+  email: false
+
+install:
+  yarn install --frozen-lockfile
+
+script:
+  - yarn typecheck
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: tasks/deploy
