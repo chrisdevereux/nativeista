@@ -1,3 +1,5 @@
+import { TextStyle } from 'react-native'
+import { getSize } from '../layout/sizing'
 import { Style, StyleInterpolation } from './styled'
 
 export interface Theme {
@@ -9,6 +11,16 @@ export interface Theme {
       standard: string
     }
   }
+  text: {
+    heading: TextTheme
+    subheading: TextTheme
+    paragraph: TextTheme
+    caption: TextTheme
+  }
+}
+
+export interface TextTheme extends TextStyle {
+  size?: number
 }
 
 export const defaultTheme: Theme = {
@@ -18,6 +30,23 @@ export const defaultTheme: Theme = {
     },
     divider: {
       standard: 'lightgrey',
+    },
+  },
+  text: {
+    heading: {
+      fontSize: getSize(4),
+      fontWeight: '600',
+    },
+    subheading: {
+      fontSize: getSize(3),
+      fontWeight: '600',
+    },
+    paragraph: {
+      fontSize: getSize(3),
+      fontWeight: '400',
+    },
+    caption: {
+      fontSize: getSize(2),
     },
   },
 }

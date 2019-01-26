@@ -8,8 +8,12 @@ import { Style } from './styled'
  * Useful for simulating the > css operator
  */
 export function createChildStyler<Props>(
-  Component: React.ComponentType<ViewProps>,
-  opts: (props: Props, ctx: { isFirst: boolean; count: number }) => Style,
+  Component: React.ComponentType<Props>,
+  opts: (
+    props: Props,
+    ctx: { isFirst: boolean; count: number },
+    t: React.ComponentType | string,
+  ) => Style,
 ): (props: Props) => React.ReactElement<{}> {
   return React.forwardRef(({ children, ...props }: any, ref: any) => {
     const count = React.Children.toArray(children).filter(React.isValidElement)
@@ -30,7 +34,7 @@ export function createChildStyler<Props>(
             ...child.props,
             style: [
               child.props.style,
-              opts(props, { isFirst: i <= firstElement, count }),
+              opts(props, { isFirst: i <= firstElement, count }, child.type),
             ],
           })
         })}
