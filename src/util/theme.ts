@@ -5,6 +5,9 @@ export interface Theme {
     control: {
       standard: string
     }
+    divider: {
+      standard: string
+    }
   }
 }
 
@@ -12,6 +15,9 @@ export const defaultTheme: Theme = {
   color: {
     control: {
       standard: 'hotpink',
+    },
+    divider: {
+      standard: 'lightgrey',
     },
   },
 }

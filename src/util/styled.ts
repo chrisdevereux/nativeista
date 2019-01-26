@@ -12,6 +12,6 @@ type Styled<ComponentProps> = <InterpolationProps>(
   ...interpolations: Array<StyleInterpolation<InterpolationProps>>
 ) => React.ComponentType<ComponentProps & InterpolationProps>
 
-export type StyleInterpolation<Props> = ((props: Props) => Style) | Style
+export type StyleInterpolation<Props = {}> = ((props: Props) => Style) | Style
 
 export const styled: CreateStyled = require('@emotion/native').default

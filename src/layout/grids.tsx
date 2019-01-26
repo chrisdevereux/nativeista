@@ -34,6 +34,7 @@ const gridChild = ({ flex }: GridItemProps): Style => ({
 })
 
 const HorizontallySpacedContainer = createChildStyler<GridItemProps>(
+  View,
   (props, { isFirst, count }) => ({
     marginLeft: isFirst ? 0 : getSize(props.spacing),
     ...(props.sizing ? { width: calculateSizing(count, props) } : {}),
@@ -41,6 +42,7 @@ const HorizontallySpacedContainer = createChildStyler<GridItemProps>(
 )
 
 const VerticallySpacedContainer = createChildStyler<GridItemProps>(
+  View,
   (props, { isFirst, count }) => ({
     marginTop: isFirst ? 0 : getSize(props.spacing),
     ...(props.sizing ? { height: calculateSizing(count, props) } : {}),

@@ -8,6 +8,7 @@ import { Style } from './styled'
  * Useful for simulating the > css operator
  */
 export function createChildStyler<Props>(
+  Component: React.ComponentType<ViewProps>,
   opts: (props: Props, ctx: { isFirst: boolean; count: number }) => Style,
 ): (props: Props) => React.ReactElement<{}> {
   return React.forwardRef(({ children, ...props }: any, ref: any) => {
@@ -19,7 +20,7 @@ export function createChildStyler<Props>(
     )
 
     return (
-      <View ref={ref} {...props}>
+      <Component ref={ref} {...props}>
         {React.Children.map(children, (child, i) => {
           if (!React.isValidElement<ViewProps>(child)) {
             return child
@@ -33,7 +34,7 @@ export function createChildStyler<Props>(
             ],
           })
         })}
-      </View>
+      </Component>
     )
   }) as any
 }
