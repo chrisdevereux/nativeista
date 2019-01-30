@@ -1,7 +1,8 @@
 import { storiesOf } from '@storybook/react'
 import React = require('react')
 import { View } from 'react-native'
-import { Cell, Columns, Rows } from '../grids'
+import { Box } from '../box'
+import { Columns, Rows } from '../grids'
 
 storiesOf('layout > columns', module)
   .add('fixed equal width', () => (
@@ -30,9 +31,10 @@ storiesOf('layout > columns', module)
   ))
   .add('flex child', () => (
     <Columns spacing={2}>
-      <Cell flex>
-        <View style={{ width: 100, height: 100, backgroundColor: 'hotpink' }} />
-      </Cell>
+      <Box
+        flex={1}
+        style={{ width: 100, height: 100, backgroundColor: 'hotpink' }}
+      />
       <View style={{ width: 100, height: 100, backgroundColor: 'hotpink' }} />
       <View style={{ width: 50, height: 100, backgroundColor: 'hotpink' }} />
       <View style={{ width: 200, height: 100, backgroundColor: 'hotpink' }} />
@@ -70,9 +72,10 @@ storiesOf('layout > rows', module)
   ))
   .add('flex child', () => (
     <Rows spacing={2} style={{ height: '100vh', position: 'relative' }}>
-      <Cell flex>
-        <View style={{ width: 100, height: 100, backgroundColor: 'hotpink' }} />
-      </Cell>
+      <Box
+        flex={1}
+        style={{ width: 100, height: 100, backgroundColor: 'hotpink' }}
+      />
       <View style={{ width: 100, height: 100, backgroundColor: 'hotpink' }} />
       <View style={{ width: 100, height: 50, backgroundColor: 'hotpink' }} />
       <View style={{ width: 100, height: 200, backgroundColor: 'hotpink' }} />

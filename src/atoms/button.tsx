@@ -51,8 +51,8 @@ export function Button({
               <ButtonContent
                 {...props}
                 spacing={2}
-                justify="center"
-                align="center"
+                justifyContent="center"
+                alignItems="center"
                 active$={active$}
               >
                 <Text>{children}</Text>
