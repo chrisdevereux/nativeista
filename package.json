@@ -53,6 +53,7 @@
     "typecheck": "tsc --noemit",
     "storybook": "start-storybook -p 6001",
     "build-storybook": "build-storybook",
+    "build": "tsc --outdir .",
     "semantic-release": "semantic-release"
   },
   "husky": {
