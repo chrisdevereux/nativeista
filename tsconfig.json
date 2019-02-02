@@ -7,7 +7,7 @@
     "jsx": "react",
     "target": "es2015",
     "declaration": true,
-    "declarationMap": true,
+    "sourceMap": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
