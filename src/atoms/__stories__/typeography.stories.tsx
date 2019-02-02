@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import React = require('react')
+import React from 'react'
 import { Heading, Paragraph, Subheading, Typeography } from '../typeography'
 
 storiesOf('atoms > typeography', module).add('layout', () => (

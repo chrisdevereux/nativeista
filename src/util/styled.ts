@@ -1,6 +1,7 @@
 // tslint:disable:no-var-requires
 
-import { TextStyle, ViewStyle } from 'react-native'
+import { ComponentType } from 'react'
+import { Animated, TextStyle, ViewStyle } from 'react-native'
 
 export type Style = ViewStyle & TextStyle
 
@@ -14,4 +15,28 @@ type Styled<ComponentProps> = <InterpolationProps>(
 
 export type StyleInterpolation<Props = {}> = ((props: Props) => Style) | Style
 
-export const styled: CreateStyled = require('@emotion/native').default
+const emotionStyled: CreateStyled = require('@emotion/native').default
+
+export function styled<Props>(component: ComponentType<Props>) {
+  return <InterpolationProps>(
+    ...interpolations: Array<StyleInterpolation<InterpolationProps>>
+  ) =>
+    Object.assign(emotionStyled(component)(...interpolations), {
+      animated: () =>
+        emotionStyled(Animated.createAnimatedComponent(component))(
+          ...interpolations,
+        ),
+    })
+}
+
+export function adaptInterpolation<Props>(
+  props: Props,
+  inter: StyleInterpolation<Props>,
+  fn: (si: Style) => Style,
+): Style {
+  if (typeof inter === 'function') {
+    return fn(inter(props))
+  }
+
+  return fn(inter)
+}

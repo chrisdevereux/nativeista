@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
     "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "lib": ["esnext"],
     "jsx": "react",
-    "target": "es5",
+    "target": "es2015",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "declaration": true,
-    "declarationMap": true,
+    "sourceMap": true,
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "rootDir": "./src"
   },
   "exclude": ["node_modules"]

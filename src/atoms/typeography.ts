@@ -6,7 +6,7 @@ interface TypeographyProps extends TextProps {}
 
 export const Typeography = createChildStyler(
   Rows,
-  (props, ctx, type) =>
+  (_, ctx, type) =>
     !ctx.isFirst && {
       ...(type === Heading && { paddingTop: getSize(2) }),
       ...(type === Subheading && { paddingTop: getSize(2) }),

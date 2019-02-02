@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -eo pipefail
+PATH=$(pwd)/node_modules/.bin:$PATH
+
+if [ -d "$NATIVEISTA_DEST" ]; then
+  echo DEPLOY TO $NATIVEISTA_DEST
+
+  target="$NATIVEISTA_DEST/node_modules/nativeista"
+
+  tsc --outDir .
+  rm -rf "$target"
+  mkdir -p "$target"
+  cp -r src animations atoms layout molecules util index.* package.json "$target"
+  rm -rf animations atoms layout molecules util index.*
+
+else
+   echo "NATIVESTA_DEST either undefined or does not exist"
+fi

@@ -1,4 +1,4 @@
-import React = require('react')
+import React from 'react'
 
 export function enclose<Props>(
   Inner: React.ComponentType<Props>,
