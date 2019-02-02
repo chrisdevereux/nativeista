@@ -3,17 +3,22 @@ import { startCase } from 'lodash'
 import * as React from 'react'
 import { Text } from 'react-native'
 import { Columns, Rows } from '../../layout'
-import { Button, ButtonProps } from '../button'
+import { ButtonControl, ButtonControlProps } from '../button-components'
 
-const exampleButtons = (props: Partial<ButtonProps> = {}) => (
+const exampleButtons = (props: Partial<ButtonControlProps> = {}) => (
   <Rows spacing={2}>
-    {Button.VARIANTS.map(variant => (
+    {Object.keys(ButtonControl.variants).map(variant => (
       <Columns key={variant} spacing={2}>
         <Text>{variant}</Text>
-        {Button.SIZES.map(size => (
-          <Button key={size} {...props} variant={variant} size={size}>
-            {startCase(size)} Size
-          </Button>
+        {Object.keys(ButtonControl.sizes).map(size => (
+          <ButtonControl
+            key={size}
+            {...props}
+            variant={variant as any}
+            size={size as any}
+          >
+            <Text>{startCase(size)} Size</Text>
+          </ButtonControl>
         ))}
       </Columns>
     ))}

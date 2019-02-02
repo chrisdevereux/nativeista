@@ -10,7 +10,7 @@ interface TransitionProps {
   children: (prop: Animated.Value) => React.ReactNode
 }
 
-type TransitionKind = (
+export type TransitionKind = (
   value: Animated.Value,
   next: number,
 ) => Animated.CompositeAnimation
