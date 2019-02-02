@@ -1,8 +1,7 @@
 import { addDecorator } from '@storybook/react'
 import { configure } from '@storybook/react'
-import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
-import { defaultTheme } from '../src/util/theme'
+import { defaultTheme, Nativeista } from '../src'
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.tsx$/)
@@ -11,7 +10,7 @@ function loadStories() {
 }
 
 addDecorator(children => (
-  <ThemeProvider theme={defaultTheme}>{children()}</ThemeProvider>
+  <Nativeista theme={defaultTheme}>{children()}</Nativeista>
 ))
 
 configure(loadStories, module)

@@ -1,5 +1,3 @@
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
-import React from 'react'
 import { TextStyle } from 'react-native'
 import { getSize } from '../layout/sizing'
 import { Style, StyleInterpolation } from './styled'
@@ -76,11 +74,4 @@ export function styleOption<Props>(
 
     return option
   }
-}
-
-export function ThemeProvider(props: {
-  theme: Theme
-  children?: React.ReactNode
-}) {
-  return <EmotionThemeProvider {...props} />
 }
