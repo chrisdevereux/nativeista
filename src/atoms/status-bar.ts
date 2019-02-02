@@ -37,5 +37,5 @@ export const StatusBar = Object.assign(
     textAlign: 'center',
     height,
   }),
-  height,
+  { height },
 )
