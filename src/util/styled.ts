@@ -29,7 +29,7 @@ export function styled<Props>(component: ComponentType<Props>) {
     })
 }
 
-export function adaptInterpolation<Props, T>(
+export function adaptInterpolation<Props>(
   props: Props,
   inter: StyleInterpolation<Props>,
   fn: (si: Style) => Style,

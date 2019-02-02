@@ -17,7 +17,7 @@ interface FixedSizeState {
   layout?: LayoutRectangle
 }
 
-class FixedSize extends React.Component<FixedSizeProps, FixedSizeState> {
+export class FixedSize extends React.Component<FixedSizeProps, FixedSizeState> {
   state: FixedSizeState = {}
 
   handleLayout = (event: LayoutChangeEvent) => {
