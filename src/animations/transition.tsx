@@ -1,5 +1,5 @@
 import { Omit } from 'lodash'
-import React = require('react')
+import React from 'react'
 import { Animated } from 'react-native'
 
 interface TransitionProps {

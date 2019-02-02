@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import React = require('react')
+import React from 'react'
 import { View } from 'react-native'
 import { Box } from '../box'
 import { Columns, Rows } from '../grids'

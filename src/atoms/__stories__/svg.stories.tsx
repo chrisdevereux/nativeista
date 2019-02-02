@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import React = require('react')
+import React from 'react'
 import { createSvgComponent } from '../svg'
 
 storiesOf('atoms > svg', module).add('standard', () => <ExampleSVG />)

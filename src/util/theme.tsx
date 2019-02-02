@@ -1,5 +1,5 @@
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
-import React = require('react')
+import React from 'react'
 import { TextStyle } from 'react-native'
 import { getSize } from '../layout/sizing'
 import { Style, StyleInterpolation } from './styled'

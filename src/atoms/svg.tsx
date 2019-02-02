@@ -1,6 +1,6 @@
 // tslint:disable:no-var-requires
 
-import React = require('react')
+import React from 'react'
 import { ViewProps } from 'react-native'
 
 interface SvgConfig extends ViewProps {

@@ -1,4 +1,4 @@
-import React = require('react')
+import React from 'react'
 import { calc, createChildStyler, percent, styled } from '../util'
 import { Box, BoxProps } from './box'
 import { getSize } from './sizing'
